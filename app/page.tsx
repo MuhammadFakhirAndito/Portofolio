@@ -1,24 +1,58 @@
 "use client";
 
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 export default function Home() {
+  //mengikuti mouse kursor dan memodif
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const updateMousePosition = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", updateMousePosition);
+
+    return () => {
+      window.removeEventListener("mousemove", updateMousePosition);
+    };
+  }, []);
+
   // Variants untuk animasi scroll yang muncul bertahap (stagger)
-  const fadeUpVariant = {
+  const fadeUpVariant: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
 
   return (
     <main 
-      className="min-h-screen bg-[#0a0a0a] text-[#f0f0f0] font-sans selection:bg-[#00ffcc] selection:text-black pb-24 overflow-hidden"
+      className="animate-grid-bg min-h-screen bg-[#0a0a0a] text-[#f0f0f0] font-sans selection:bg-[#00ffcc] selection:text-black pb-24 overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px)`,
         backgroundSize: '30px 30px'
       }}
+      
     >
+
+      <motion.div
+        className="fixed top-0 left-0 w-8 h-8 border border-[#00ffcc] rounded-full pointer-events-none z-[9999] hidden md:flex items-center justify-center mix-blend-difference"
+        animate={{ 
+          x: mousePosition.x - 16, 
+          y: mousePosition.y - 16 
+        }}
+        transition={{ 
+          type: "spring", 
+          stiffness: 500, 
+          damping: 28,
+          mass: 0.5
+        }}
+      >
+        <div className="w-1.5 h-1.5 bg-[#00ffcc] rounded-full" />
+      </motion.div>
+
       <div className="max-w-4xl mx-auto px-6 pt-16 md:pt-24">
         
         {/* HEADER */}
