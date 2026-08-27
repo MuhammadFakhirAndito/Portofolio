@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
+import BorderGlow from '../components/BorderGlow';
 import { 
   SiPython, SiJavascript, SiHtml5, SiCss, SiNextdotjs, SiReact, SiTailwindcss, 
   SiGit, SiFigma, SiNotion, SiTypescript, SiPhp, SiLaravel, SiVuedotjs 
@@ -43,10 +44,10 @@ export default function Home() {
     >
       <div className="fixed inset-0 z-0 opacity-40 pointer-events-none">
         <GradientWaves 
-          horizonColor="#0a0a0a" // Warna background gelap
-          waveColor="#00ffcc"    // Warna ombak cyan neon khas webmu
-          crestColor="#ffffff"   // Ujung ombak putih
-          amplitude={1.5}        // Dibuat agak kalem agar tidak pusing
+          horizonColor="#0a0a0a" 
+          waveColor="#00ffcc"    
+          crestColor="#ffffff"  
+          amplitude={1.5}        
           speed={0.2}
           tilt={1.2}
         />
@@ -76,8 +77,23 @@ export default function Home() {
           </motion.div>
           
           <motion.div className="order-1 md:order-2 relative w-full max-w-[250px] aspect-[3/4] mx-auto" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}>
-            <div className="absolute inset-0 border-2 border-[#333] rounded-lg group hover:border-[#00ffcc] hover:shadow-[0_0_20px_rgba(0,255,204,0.2)] transition-all duration-300 z-10 pointer-events-none"></div>
-            <Image src="/foto diriku dimasa depan kurang dari 1mb.jpg" alt="Muhammad Fakhir Andito" fill className="object-cover rounded-lg grayscale-[20%] contrast-110 hover:grayscale-0 hover:contrast-100 transition-all duration-300" priority />
+            
+            <BorderGlow
+              className="w-full h-full"
+              glowColor="168 100 50"
+              backgroundColor="#0a0a0a"
+              borderRadius={8}
+              colors={['#00ffcc', '#00b38f', '#ffffff']}
+            >
+              <Image 
+                src="/foto diriku dimasa depan kurang dari 1mb.jpg" 
+                alt="Muhammad Fakhir Andito" 
+                fill 
+                className="object-cover rounded-lg grayscale-[20%] contrast-110 hover:grayscale-0 hover:contrast-100 transition-all duration-300 z-10" 
+                priority 
+              />
+            </BorderGlow>
+
           </motion.div>
         </header>
 
