@@ -10,10 +10,11 @@ import {
   SiGit, SiFigma, SiNotion, SiTypescript, SiPhp, SiLaravel, SiVuedotjs 
 } from 'react-icons/si';
 import dynamic from 'next/dynamic';
-
+const WarpText = dynamic(() => import('../components/WarpText'), { ssr: false });
 const GradientWaves = dynamic(() => import('../components/GradientWaves'), { 
   ssr: false 
-});import { VscVscode } from 'react-icons/vsc';
+});
+import { VscVscode } from 'react-icons/vsc';
 import { FaDatabase, FaPaintBrush, FaRobot, FaFire } from 'react-icons/fa';
 
 
@@ -56,7 +57,7 @@ export default function Home() {
       <motion.div
         className="fixed top-0 left-0 w-8 h-8 border border-[#00ffcc] rounded-full pointer-events-none z-[9999] hidden md:flex items-center justify-center mix-blend-difference"
         animate={{ x: mousePosition.x - 16, y: mousePosition.y - 16 }}
-        transition={{ type: "spring", stiffness: 500, damping: 28, mass: 0.5 }}
+        transition={{ type: "spring", stiffness: 1000, damping: 30, mass: 0.1 }}
       >
         <div className="w-1.5 h-1.5 bg-[#00ffcc] rounded-full" />
       </motion.div>
@@ -71,8 +72,8 @@ export default function Home() {
             <p className="text-[#888888] text-xl mb-8">Information Systems Student & Tech Enthusiast</p>
             <div className="flex gap-4 font-mono text-sm">
               <Link href="https://github.com/MuhammadFakhirAndito" target="_blank" className="text-[#00ffcc] hover:text-[#00b38f] transition-colors">[ GitHub ]</Link>
-              <Link href="#" className="text-[#00ffcc] hover:text-[#00b38f] transition-colors">[ LinkedIn ]</Link>
-              <Link href="#" className="text-[#00ffcc] hover:text-[#00b38f] transition-colors">[ Instagram ]</Link>
+              <Link href="https://www.linkedin.com/in/muhammad-fakhir-andito-58463b387/" className="text-[#00ffcc] hover:text-[#00b38f] transition-colors">[ LinkedIn ]</Link>
+              <Link href="https://www.instagram.com/an_dito_/" className="text-[#00ffcc] hover:text-[#00b38f] transition-colors">[ Instagram ]</Link>
             </div>
           </motion.div>
           
@@ -99,15 +100,23 @@ export default function Home() {
 
         {/* 01 / ABOUT */}
         <motion.section className="mb-24" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUpVariant}>
-          <h2 className="font-mono text-[#00ffcc] text-sm uppercase border-b border-[#333] pb-2 mb-8">01 // About Me</h2>
+          <div className="border-b border-[#333] mb-8 h-[60px]">
+            <WarpText text="ABOUT ME" color="#00ffcc" fontWeight={800} fontSize={40} letterSpacing="0em" lineHeight={0.85} warpStrength={0} warpScale={1.7} speed={0} pointerInfluence={0.75} pointerStrength={0.7} refraction={0} ripple={false} className="!min-h-[80px] w-full"/>
+          </div>
           <p className="text-[#888888] text-lg leading-relaxed">
-            Saya adalah mahasiswa Sistem Informasi di Universitas Atma Jaya Yogyakarta (UAJY). Saya sangat tertarik pada persimpangan antara logika sistem terstruktur dan eksplorasi digital kreatif. Baik itu memimpin tim dalam lingkungan kampus maupun mengeksplorasi teknologi baru, saya selalu mencari cara untuk memecahkan masalah dengan pendekatan yang efisien dan estetis.
+            I&apos;m Muhammad Fakhir Andito, an Information Systems student at Universitas Pembangunan Nasional Veteran Yogyakarta, with a strong interest in where structured system logic meets creative digital exploration.
+
+            I&apos;ve developed this interest through various organizational, project, and community experiences, where I&apos;ve learned to solve problems, build collaborations, sharpen leadership, and refine creativity. I&apos;m also actively exploring web development, business development, and UI/UX design, driven by my belief that the best solutions come from a balance between sound logic and the right aesthetic touch.
+
+            Currently, I&apos;m deepening my business analysis skills while strengthening my abilities in software development.
           </p>
         </motion.section>
 
         {/* 02 / TECH STACK */}
         <motion.section className="mb-24" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUpVariant}>
-          <h2 className="font-mono text-[#00ffcc] text-sm uppercase border-b border-[#333] pb-2 mb-8">02 // Tech Stack</h2>
+          <div className="border-b border-[#333] mb-8 h-[60px]">
+            <WarpText text="TECH STACK" color="#00ffcc" fontWeight={800} fontSize={40} letterSpacing="0em" lineHeight={0.85} warpStrength={0} warpScale={1.7} speed={0} pointerInfluence={0.75} pointerStrength={0.7} refraction={0} ripple={false} className="!min-h-[80px] w-full"/>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             
             {/* LANGUAGES */}
@@ -161,7 +170,9 @@ export default function Home() {
 
         {/* 03 / GITHUB ACTIVITY */}
         <motion.section className="mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUpVariant}>
-          <h2 className="font-mono text-[#00ffcc] text-sm uppercase border-b border-[#333] pb-2 mb-8">03 // GitHub Activity</h2>
+          <div className="border-b border-[#333] mb-8 h-[60px]">
+            <WarpText text="GITHUB ACTIVITY" color="#00ffcc" fontWeight={800} fontSize={40} letterSpacing="0em" lineHeight={0.85} warpStrength={0} warpScale={1.7} speed={0.2} pointerInfluence={0.75} pointerStrength={0.9} refraction={0} ripple={false} className="!min-h-[80px] w-full"/>
+          </div>
           
           {/* CUSTOM GITHUB STATS & LANGUAGES UI */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
