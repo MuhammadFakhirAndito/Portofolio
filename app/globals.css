@@ -12,3 +12,7 @@
 .animate-grid-bg {
   animation: panGrid 4s linear infinite;
 }
+
+*, a, button, input, textarea, select {
+  cursor: none !important;
+}
