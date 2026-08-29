@@ -19,9 +19,7 @@ import { FaDatabase, FaPaintBrush, FaRobot, FaFire } from 'react-icons/fa';
 
 
 export default function Home() {
-  // State untuk custom cursor
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  // State untuk Tab Aktif (Default: 'projects')
   const [activeTab, setActiveTab] = useState('projects');
 
   useEffect(() => {
@@ -105,9 +103,9 @@ export default function Home() {
           </div>
           <p className="text-[#888888] text-lg leading-relaxed">
             I&apos;m Muhammad Fakhir Andito, an Information Systems student at Universitas Pembangunan Nasional Veteran Yogyakarta, with a strong interest in where structured system logic meets creative digital exploration.
-
+            <br/><br/>
             I&apos;ve developed this interest through various organizational, project, and community experiences, where I&apos;ve learned to solve problems, build collaborations, sharpen leadership, and refine creativity. I&apos;m also actively exploring web development, business development, and UI/UX design, driven by my belief that the best solutions come from a balance between sound logic and the right aesthetic touch.
-
+            <br/><br/>
             Currently, I&apos;m deepening my business analysis skills while strengthening my abilities in software development.
           </p>
         </motion.section>
@@ -286,7 +284,7 @@ export default function Home() {
               onClick={() => setActiveTab('projects')} 
               className={`px-6 py-2 font-mono text-sm border transition-all duration-300 ${activeTab === 'projects' ? 'border-[#00ffcc] text-[#00ffcc] bg-[#00ffcc]/10 shadow-[0_0_15px_rgba(0,255,204,0.2)]' : 'border-[#333] text-[#888888] hover:border-[#00ffcc] hover:text-[#00ffcc]'}`}
             >
-              [ SELECTED WORKS ]
+              [ PROJECTS ]
             </button>
             <button 
               onClick={() => setActiveTab('experience')} 
@@ -307,58 +305,81 @@ export default function Home() {
             
             {/* TAMPILAN TAB: PROJECTS */}
             {activeTab === 'projects' && (
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col gap-6">
+            <motion.section className="mb-24" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUpVariant}>
+              <div className="flex flex-col gap-8">
+                {/* Project 1 */}
+                <div className="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-4 transition-all duration-300">
+                  {/* Partial Image View */}
+                  <div className="md:col-span-5 relative h-48 md:h-full w-full overflow-hidden rounded border border-[#222]">
+                    <Image 
+                      src="/project-1.jpg" // Ganti dengan nama file gambarmu di folder public
+                      alt="SPAMA Tracker Dashboard" 
+                      fill 
+                      className="object-cover object-top grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 hover:scale-105" 
+                    />
+                  </div>
+                  {/* Content */}
+                  <div className="md:col-span-7 flex flex-col justify-center py-2">
+                    <h3 className="text-2xl font-bold text-[#f0f0f0] mb-2 group-hover:text-[#00ffcc] transition-colors">TrueAtributte Skills Verified Future Secured!</h3>
+                    <p className="text-[#888888] text-sm mb-6 leading-relaxed">
+                      TrueAttribute is an AI driven talent verification platform that objectively measures student skills through real evidence, bridges job ready candidates with HR professionals, and delivers industry aligned analytical dashboards for higher education institutions.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      <span className="px-2 py-1 text-[10px] font-mono text-[#00ffcc] border border-[#00ffcc]/30 bg-[#00ffcc]/10 rounded">Figma</span>
+                      <span className="px-2 py-1 text-[10px] font-mono text-[#00ffcc] border border-[#00ffcc]/30 bg-[#00ffcc]/10 rounded">Canva</span>
+                      <span className="px-2 py-1 text-[10px] font-mono text-[#00ffcc] border border-[#00ffcc]/30 bg-[#00ffcc]/10 rounded">LLM AI</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project 2 */}
+                <div className="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-4 transition-all duration-300">
+                  <div className="md:col-span-5 relative h-48 md:h-full w-full overflow-hidden rounded border border-[#222]">
+                    <Image 
+                      src="/project-2.jpg" 
+                      alt="Gorpcore AI Lookbook" 
+                      fill 
+                      className="object-cover object-top grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 hover:scale-105" 
+                    />
+                  </div>
+                  <div className="md:col-span-7 flex flex-col justify-center py-2">
+                    <h3 className="text-2xl font-bold text-[#f0f0f0] mb-2 group-hover:text-[#00ffcc] transition-colors">Seapedia Many Roles One Market.</h3>
+                    <p className="text-[#888888] text-sm mb-6 leading-relaxed">
+                      SEAPEDIA is a multi role web based marketplace platform that connects Sellers, Buyers, and Delivery Partners in one integrated digital commerce ecosystem.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      <span className="px-2 py-1 text-[10px] font-mono text-[#00ffcc] border border-[#00ffcc]/30 bg-[#00ffcc]/10 rounded">Laravel</span>
+                      <span className="px-2 py-1 text-[10px] font-mono text-[#00ffcc] border border-[#00ffcc]/30 bg-[#00ffcc]/10 rounded">Vue</span>
+                      <span className="px-2 py-1 text-[10px] font-mono text-[#00ffcc] border border-[#00ffcc]/30 bg-[#00ffcc]/10 rounded">Postman</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project 3 */}
+                <div className="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-4 transition-all duration-300">
+                  <div className="md:col-span-5 relative h-48 md:h-full w-full overflow-hidden rounded border border-[#222]">
+                    <Image 
+                      src="/project-3.jpg" 
+                      alt="Hardware Specs Analyzer" 
+                      fill 
+                      className="object-cover object-top grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 hover:scale-105" 
+                    />
+                  </div>
+                  <div className="md:col-span-7 flex flex-col justify-center py-2">
+                    <h3 className="text-2xl font-bold text-[#f0f0f0] mb-2 group-hover:text-[#00ffcc] transition-colors">MyAnime Explore the World of Anime.</h3>
+                    <p className="text-[#888888] text-sm mb-6 leading-relaxed">
+                      MyAnime is a modern anime discovery platform designed to help users explore, discover, and find their next favorite anime Powered by anime data APIs.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      <span className="px-2 py-1 text-[10px] font-mono text-[#00ffcc] border border-[#00ffcc]/30 bg-[#00ffcc]/10 rounded">TypeScript</span>
+                      <span className="px-2 py-1 text-[10px] font-mono text-[#00ffcc] border border-[#00ffcc]/30 bg-[#00ffcc]/10 rounded">Next.js</span>
+                      <span className="px-2 py-1 text-[10px] font-mono text-[#00ffcc] border border-[#00ffcc]/30 bg-[#00ffcc]/10 rounded">JavaScript</span>
+                    </div>
+                  </div>
+                </div>
                 
-                {/* Proyek 1 */}
-                <div className="group grid grid-cols-1 md:grid-cols-[3fr_1fr] p-6 bg-[#121212] border border-[#333] border-l-4 border-l-[#333] rounded hover:border-l-[#00ffcc] hover:bg-[#1a1a1a] transition-all duration-300">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 text-[#f0f0f0]">Sistem Informasi Akademik (Mockup)</h3>
-                    <p className="text-[#888888] text-sm mb-4">Analisis dan perancangan basis data untuk manajemen poin aktivitas mahasiswa Universitas Atma Jaya Yogyakarta.</p>
-                    <div className="flex gap-2 font-mono text-xs text-[#00ffcc]">
-                      <span className="px-2 py-1 bg-[#0a0a0a] rounded border border-[#333]">SQL</span>
-                      <span className="px-2 py-1 bg-[#0a0a0a] rounded border border-[#333]">System Analysis</span>
-                    </div>
-                  </div>
-                  <div className="md:text-right mt-6 md:mt-0 flex flex-col md:items-end justify-center gap-3">
-                    <Link href="https://github.com/MuhammadFakhirAndito" target="_blank" className="font-mono text-sm text-[#00ffcc] hover:text-[#00b38f] transition-colors border border-[#00ffcc] px-4 py-2 rounded">🔗 Repo GitHub</Link>
-                  </div>
-                </div>
-
-                {/* Proyek 2 */}
-                <div className="group grid grid-cols-1 md:grid-cols-[3fr_1fr] p-6 bg-[#121212] border border-[#333] border-l-4 border-l-[#333] rounded hover:border-l-[#00ffcc] hover:bg-[#1a1a1a] transition-all duration-300">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 text-[#f0f0f0]">Cinematic AI Generation Series</h3>
-                    <p className="text-[#888888] text-sm mb-4">Eksplorasi estetika Gorpcore dan Utilitarian melalui manipulasi digital tingkat lanjut dan AI prompt engineering.</p>
-                    <div className="flex gap-2 font-mono text-xs text-[#00ffcc]">
-                      <span className="px-2 py-1 bg-[#0a0a0a] rounded border border-[#333]">Midjourney</span>
-                      <span className="px-2 py-1 bg-[#0a0a0a] rounded border border-[#333]">Design</span>
-                    </div>
-                  </div>
-                  <div className="md:text-right mt-6 md:mt-0 flex flex-col md:items-end justify-center gap-3">
-                    <Link href="#" className="font-mono text-sm text-[#00ffcc] hover:text-[#00b38f] transition-colors border border-[#00ffcc] px-4 py-2 rounded">👁️ View Gallery</Link>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-
-            {/* TAMPILAN TAB: EXPERIENCE */}
-            {activeTab === 'experience' && (
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                <div className="border-l border-dashed border-[#333] pl-8 ml-4 flex flex-col gap-10 py-4">
-                  <div className="relative">
-                    <div className="absolute -left-[41px] top-1.5 w-3 h-3 bg-[#0a0a0a] border-2 border-[#00ffcc] rounded-full shadow-[0_0_10px_rgba(0,255,204,0.5)]"></div>
-                    <div className="font-mono text-xs text-[#00ffcc] mb-2">AGUSTUS 2025</div>
-                    <h3 className="text-xl font-semibold mb-2 text-[#f0f0f0]">Ketua Kelompok &quot;Mordor&quot;</h3>
-                    <p className="text-[#888888] text-sm">PKK-SI UAJY. Memimpin tim, memastikan koordinasi kelancaran acara orientasi, dan membangun kerja sama tim yang solid.</p>
-                  </div>
-                  <div className="relative">
-                    <div className="absolute -left-[41px] top-1.5 w-3 h-3 bg-[#0a0a0a] border-2 border-[#333] rounded-full"></div>
-                    <div className="font-mono text-xs text-[#888888] mb-2">AGUSTUS 2025</div>
-                    <h3 className="text-xl font-semibold mb-2 text-[#f0f0f0]">Peserta Mentoring Intensif</h3>
-                    <p className="text-[#888888] text-sm">Dibimbing langsung oleh mentor (Kak Ocha dan Kak Daniel) dalam program pengembangan karakter, adaptasi lingkungan kampus, dan kepemimpinan dasar.</p>
-                  </div>
-                </div>
-              </motion.div>
+              </div>
+            </motion.section>
             )}
 
             {/* TAMPILAN TAB: HOBBIES / BEYOND CODE */}
@@ -390,8 +411,8 @@ export default function Home() {
             LET&apos;S TALK.
           </h1>
           <div className="flex justify-center gap-6 font-mono text-sm">
-            <Link href="#" className="text-[#00ffcc] hover:text-[#00b38f] transition-colors">[ Email Me ]</Link>
-            <Link href="#" className="text-[#00ffcc] hover:text-[#00b38f] transition-colors">[ LinkedIn ]</Link>
+            <Link href="mailto:indraandito@gmail.com" className="text-[#00ffcc] hover:text-[#00b38f] transition-colors">[ indraandito@gmail.com ]</Link>
+            <Link href="https://www.linkedin.com/in/muhammad-fakhir-andito-58463b387/" className="text-[#00ffcc] hover:text-[#00b38f] transition-colors">[ LinkedIn ]</Link>
             <Link href="https://github.com/MuhammadFakhirAndito" target="_blank" className="text-[#00ffcc] hover:text-[#00b38f] transition-colors">[ GitHub ]</Link>
           </div>
         </motion.section>
