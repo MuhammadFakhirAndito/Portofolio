@@ -312,7 +312,7 @@ export default function Home() {
                   {/* Partial Image View */}
                   <div className="md:col-span-5 relative h-48 md:h-full w-full overflow-hidden rounded border border-[#222]">
                     <Image 
-                      src="/project-1.jpg" // Ganti dengan nama file gambarmu di folder public
+                      src="/project-1.jpg" 
                       alt="SPAMA Tracker Dashboard" 
                       fill 
                       className="object-cover object-top grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 hover:scale-105" 
@@ -380,6 +380,95 @@ export default function Home() {
                 
               </div>
             </motion.section>
+            )}
+
+            {/* TAMPILAN TAB: EXPERIENCE */}
+            {activeTab === 'experience' && (
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col gap-6">
+                
+                {/* Item 1: Code124 */}
+                <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-5 transition-all duration-300">
+                  <div className="flex gap-4 items-start">
+                    <div className="w-12 h-12 bg-[#1a1a1a] border border-[#333] rounded flex items-center justify-center shrink-0 font-mono text-[#00ffcc] font-bold text-xs group-hover:border-[#00ffcc] transition-colors">
+                      CODE
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex flex-wrap justify-between items-start gap-2">
+                        <div>
+                          <h3 className="text-lg font-bold text-[#f0f0f0] group-hover:text-[#00ffcc] transition-colors">Staff of Frontend Development</h3>
+                          <p className="text-[#888888] text-sm">Code124</p>
+                        </div>
+                        <span className="font-mono text-xs text-[#00ffcc] bg-[#00ffcc]/10 border border-[#00ffcc]/30 px-2 py-0.5 rounded">Hybrid</span>
+                      </div>
+                      <p className="font-mono text-xs text-[#666] my-2">Aug 2026 - Present · 1 mo | Sleman, Yogyakarta, Indonesia</p>
+                      <div className="flex flex-wrap gap-2 mt-4 pt-3 border-t border-[#222]">
+                        <span className="text-xs text-[#aaa] font-mono">💎 Skills:</span>
+                        <span className="text-xs text-[#00ffcc] font-mono">Teamwork</span>
+                        <span className="text-xs text-[#888] font-mono">•</span>
+                        <span className="text-xs text-[#00ffcc] font-mono">Tailwind CSS</span>
+                        <span className="text-xs text-[#888] font-mono">•</span>
+                        <span className="text-xs text-[#888] font-mono">+6 skills</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Item 2: Himasisfo UPN Veteran Yogyakarta */}
+                <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-5 transition-all duration-300">
+                  <div className="flex gap-4 items-start">
+                    <div className="w-12 h-12 bg-[#1a1a1a] border border-[#333] rounded flex items-center justify-center shrink-0 font-mono text-[#00ffcc] font-bold text-xs group-hover:border-[#00ffcc] transition-colors">
+                      SI
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex flex-wrap justify-between items-start gap-2">
+                        <div>
+                          <h3 className="text-lg font-bold text-[#f0f0f0] group-hover:text-[#00ffcc] transition-colors">Staff of Academic and Professional Development Department</h3>
+                          <p className="text-[#888888] text-sm">Himasisfo UPN Veteran Yogyakarta · Seasonal</p>
+                        </div>
+                        <span className="font-mono text-xs text-[#00ffcc] bg-[#00ffcc]/10 border border-[#00ffcc]/30 px-2 py-0.5 rounded">On-site</span>
+                      </div>
+                      <p className="font-mono text-xs text-[#666] my-2">Aug 2026 - Present · 1 mo | Sleman, Yogyakarta, Indonesia</p>
+                      <p className="text-[#888888] text-sm my-3 leading-relaxed">
+                        Designed and organized programs to support students&apos; academic and professional development.
+                      </p>
+                      <div className="flex flex-wrap gap-2 mt-2 pt-3 border-t border-[#222]">
+                        <span className="text-xs text-[#aaa] font-mono">💎 Skills:</span>
+                        <span className="text-xs text-[#00ffcc] font-mono">Teamwork</span>
+                        <span className="text-xs text-[#888] font-mono">•</span>
+                        <span className="text-xs text-[#00ffcc] font-mono">Public Speaking</span>
+                        <span className="text-xs text-[#888] font-mono">•</span>
+                        <span className="text-xs text-[#888] font-mono">+4 skills</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Item 3: Kharisma */}
+                <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-5 transition-all duration-300">
+                  <div className="flex gap-4 items-start">
+                    <div className="w-12 h-12 bg-[#1a1a1a] border border-[#333] rounded flex items-center justify-center shrink-0 font-mono text-[#00ffcc] font-bold text-xs group-hover:border-[#00ffcc] transition-colors">
+                      KHS
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex flex-wrap justify-between items-start gap-2">
+                        <div>
+                          <h3 className="text-lg font-bold text-[#f0f0f0] group-hover:text-[#00ffcc] transition-colors">Staff of Tarbiyah</h3>
+                          <p className="text-[#888888] text-sm">Kharisma · Seasonal</p>
+                        </div>
+                        <span className="font-mono text-xs text-[#00ffcc] bg-[#00ffcc]/10 border border-[#00ffcc]/30 px-2 py-0.5 rounded">On-site</span>
+                      </div>
+                      <p className="font-mono text-xs text-[#666] my-2">Sep 2023 - Oct 2024 · 1 yr 2 mos | Sleman, Yogyakarta, Indonesia</p>
+                      <div className="flex flex-wrap gap-2 mt-4 pt-3 border-t border-[#222]">
+                        <span className="text-xs text-[#aaa] font-mono">💎 Skills:</span>
+                        <span className="text-xs text-[#00ffcc] font-mono">Teamwork</span>
+                        <span className="text-xs text-[#888] font-mono">•</span>
+                        <span className="text-xs text-[#00ffcc] font-mono">Problem Solving</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </motion.div>
             )}
 
             {/* TAMPILAN TAB: HOBBIES / BEYOND CODE */}
