@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, Variants } from 'framer-motion';
 import BorderGlow from '../components/BorderGlow';
 import { 
   SiPython, SiJavascript, SiHtml5, SiCss, SiNextdotjs, SiReact, SiTailwindcss, 
@@ -37,6 +37,16 @@ export default function Home() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
 
+  const words = ["EXPERIENCES.", "SYSTEMS.", "SOLUTIONS.", "FUTURES."];
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % words.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [words.length]);
+
   return (
     <main 
       className="min-h-screen bg-[#0a0a0a] text-[#f0f0f0] font-sans selection:bg-[#00ffcc] selection:text-black pb-24 overflow-hidden cursor-none relative"
@@ -66,7 +76,25 @@ export default function Home() {
         <header className="grid grid-cols-1 md:grid-cols-[1fr_250px] gap-8 items-center mb-24">
           <motion.div className="order-2 md:order-1" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
             <h3 className="font-mono text-[#00ffcc] mb-4 text-sm tracking-widest uppercase">Hey, I&apos;m Dito 👋</h3>
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4 tracking-tighter">I BUILD DIGITAL<br />EXPERIENCES.</h1>
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4 tracking-tighter flex flex-col items-start text-[#f0f0f0]">
+              <span>I BUILD DIGITAL</span>
+              <span className="overflow-hidden relative flex items-center min-w-[350px] md:min-w-[500px] h-[1.3em]">
+                <AnimatePresence mode="popLayout">
+                  <motion.span
+                    key={wordIndex}
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -50, opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    // PERUBAHAN: tambah whitespace-nowrap agar aman
+                    className="absolute inline-block whitespace-nowrap"
+                  >
+                    {words[wordIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+            </h1>
+
             <p className="text-[#888888] text-xl mb-8">Information Systems Student & Tech Enthusiast</p>
             <div className="flex gap-4 font-mono text-sm">
               <Link href="https://github.com/MuhammadFakhirAndito" target="_blank" className="text-[#00ffcc] hover:text-[#00b38f] transition-colors">[ GitHub ]</Link>
@@ -76,7 +104,6 @@ export default function Home() {
           </motion.div>
           
           <motion.div className="order-1 md:order-2 relative w-full max-w-[250px] aspect-[3/4] mx-auto" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}>
-            
             <BorderGlow
               className="w-full h-full"
               glowColor="168 100 50"
@@ -92,7 +119,6 @@ export default function Home() {
                 priority 
               />
             </BorderGlow>
-
           </motion.div>
         </header>
 
@@ -296,7 +322,7 @@ export default function Home() {
               onClick={() => setActiveTab('hobbies')} 
               className={`px-6 py-2 font-mono text-sm border transition-all duration-300 ${activeTab === 'hobbies' ? 'border-[#00ffcc] text-[#00ffcc] bg-[#00ffcc]/10 shadow-[0_0_15px_rgba(0,255,204,0.2)]' : 'border-[#333] text-[#888888] hover:border-[#00ffcc] hover:text-[#00ffcc]'}`}
             >
-              [ BEYOND CODE ]
+              [ CERTIFICATES ]
             </button>
           </div>
 
@@ -389,8 +415,13 @@ export default function Home() {
                 {/* Item 1: Code124 */}
                 <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-5 transition-all duration-300">
                   <div className="flex gap-4 items-start">
-                    <div className="w-12 h-12 bg-[#1a1a1a] border border-[#333] rounded flex items-center justify-center shrink-0 font-mono text-[#00ffcc] font-bold text-xs group-hover:border-[#00ffcc] transition-colors">
-                      CODE
+                    <div className="relative w-12 h-12 shrink-0 rounded overflow-hidden border border-[#333] group-hover:border-[#00ffcc] transition-colors bg-[#1a1a1a]">
+                      <Image 
+                        src="/Code124.png"
+                        alt="Code124 Logo" 
+                        fill 
+                        className="object-cover"
+                      />
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap justify-between items-start gap-2">
@@ -416,8 +447,14 @@ export default function Home() {
                 {/* Item 2: Himasisfo UPN Veteran Yogyakarta */}
                 <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-5 transition-all duration-300">
                   <div className="flex gap-4 items-start">
-                    <div className="w-12 h-12 bg-[#1a1a1a] border border-[#333] rounded flex items-center justify-center shrink-0 font-mono text-[#00ffcc] font-bold text-xs group-hover:border-[#00ffcc] transition-colors">
-                      SI
+                    {/* BAGIAN GAMBAR LOGO 2 */}
+                    <div className="relative w-12 h-12 shrink-0 rounded overflow-hidden border border-[#333] group-hover:border-[#00ffcc] transition-colors bg-[#1a1a1a]">
+                      <Image 
+                        src="/Himasisfo.png" 
+                        alt="Himasisfo Logo" 
+                        fill 
+                        className="object-cover"
+                      />
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap justify-between items-start gap-2">
@@ -427,7 +464,7 @@ export default function Home() {
                         </div>
                         <span className="font-mono text-xs text-[#00ffcc] bg-[#00ffcc]/10 border border-[#00ffcc]/30 px-2 py-0.5 rounded">On-site</span>
                       </div>
-                      <p className="font-mono text-xs text-[#666] my-2">Aug 2026 - Present · 1 mo | Sleman, Yogyakarta, Indonesia</p>
+                      <p className="font-mono text-xs text-[#666] my-2">May 2026 - Present · 1 mo | Sleman, Yogyakarta, Indonesia</p>
                       <p className="text-[#888888] text-sm my-3 leading-relaxed">
                         Designed and organized programs to support students&apos; academic and professional development.
                       </p>
@@ -446,8 +483,13 @@ export default function Home() {
                 {/* Item 3: Kharisma */}
                 <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-5 transition-all duration-300">
                   <div className="flex gap-4 items-start">
-                    <div className="w-12 h-12 bg-[#1a1a1a] border border-[#333] rounded flex items-center justify-center shrink-0 font-mono text-[#00ffcc] font-bold text-xs group-hover:border-[#00ffcc] transition-colors">
-                      KHS
+                    <div className="relative w-12 h-12 shrink-0 rounded overflow-hidden border border-[#333] group-hover:border-[#00ffcc] transition-colors bg-[#1a1a1a]">
+                      <Image 
+                        src="/Khr.png" 
+                        alt="Kharisma Logo" 
+                        fill 
+                        className="object-cover"
+                      />
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap justify-between items-start gap-2">
@@ -471,22 +513,74 @@ export default function Home() {
               </motion.div>
             )}
 
-            {/* TAMPILAN TAB: HOBBIES / BEYOND CODE */}
+            {/* TAMPILAN TAB: CERTIFICATES */}
             {activeTab === 'hobbies' && (
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                <h3 className="text-xl font-semibold mb-4 text-[#f0f0f0]">Areas of Interest & Exploration</h3>
-                <div className="flex flex-wrap gap-3 mb-8">
-                  {['Technical Fashion / Gorpcore', 'Kalkulus & Math', 'PC Hardware Architecture', 'Kurikulum Merdeka Analysis'].map((tag) => (
-                    <span key={tag} className="px-4 py-2 bg-[#121212] border border-[#333] rounded-full text-sm text-[#888888] hover:border-[#00ffcc] hover:text-[#f0f0f0] transition-colors cursor-default">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="p-6 bg-[#121212] border border-[#333] rounded-lg border-l-4 border-l-[#00ffcc]">
-                  <h3 className="font-mono text-[#00ffcc] text-xs mb-3">CURRENTLY FOCUSING ON:</h3>
-                  <p className="text-[#888888] text-sm leading-relaxed">
-                    Mendalami perbedaan arsitektur memori (seperti LPDDR vs DDR pada laptop), serta mengasah pemahaman matematika tingkat lanjut seperti penerapan limit fungsi dan analisis fungsi bijektif.
-                  </p>
+                <h3 className="text-xl font-semibold mb-6 text-[#f0f0f0]">Certifications & Achievements</h3>
+                
+                {/* Grid Sertifikat */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  
+                  {/* Certificate 1 */}
+                  <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-4 transition-all duration-300">
+                    <div className="relative w-full aspect-[4/3] rounded overflow-hidden border border-[#222] mb-4 bg-[#1a1a1a]">
+                      <Image 
+                        src="/sertifikat-1.jpg" 
+                        alt="Peserta Lomba Business Model Canvas" 
+                        fill 
+                        className="object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <h4 className="text-[#f0f0f0] font-bold group-hover:text-[#00ffcc] transition-colors line-clamp-1">Peserta Lomba Business Model Canvas</h4>
+                    <p className="text-[#888888] text-sm mt-1">UKMF Penelitian Reaction FV UNY</p>
+                    <div className="mt-3 pt-3 border-t border-[#222] flex justify-between items-center">
+                      <span className="font-mono text-xs text-[#00ffcc] bg-[#00ffcc]/10 border border-[#00ffcc]/30 px-2 py-0.5 rounded">
+                        Mei 2026
+                      </span>
+                      <span className="text-[10px] font-mono text-[#666]">Business & Innovation</span>
+                    </div>
+                  </div>
+
+                  {/* Certificate 2 */}
+                  <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-4 transition-all duration-300">
+                    <div className="relative w-full aspect-[4/3] rounded overflow-hidden border border-[#222] mb-4 bg-[#1a1a1a]">
+                      <Image 
+                        src="/sertifikat-2.jpg" 
+                        alt="Peserta Kategori Web Development" 
+                        fill 
+                        className="object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <h4 className="text-[#f0f0f0] font-bold group-hover:text-[#00ffcc] transition-colors line-clamp-1">Peserta Web Development</h4>
+                    <p className="text-[#888888] text-sm mt-1">Codelab Indonesia</p>
+                    <div className="mt-3 pt-3 border-t border-[#222] flex justify-between items-center">
+                      <span className="font-mono text-xs text-[#00ffcc] bg-[#00ffcc]/10 border border-[#00ffcc]/30 px-2 py-0.5 rounded">
+                        Mei 2026
+                      </span>
+                      <span className="text-[10px] font-mono text-[#666]">Web Development</span>
+                    </div>
+                  </div>
+
+                  {/* Certificate 3 */}
+                  <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-4 transition-all duration-300">
+                    <div className="relative w-full aspect-[4/3] rounded overflow-hidden border border-[#222] mb-4 bg-[#1a1a1a]">
+                      <Image 
+                        src="/sertifikat-3.jpg" 
+                        alt="Panitia Divisi Perlengkapan Event LKI" 
+                        fill 
+                        className="object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <h4 className="text-[#f0f0f0] font-bold group-hover:text-[#00ffcc] transition-colors line-clamp-1">Panitia Divisi Perlengkapan</h4>
+                    <p className="text-[#888888] text-sm mt-1">SMA Negeri 2 Yogyakarta</p>
+                    <div className="mt-3 pt-3 border-t border-[#222] flex justify-between items-center">
+                      <span className="font-mono text-xs text-[#00ffcc] bg-[#00ffcc]/10 border border-[#00ffcc]/30 px-2 py-0.5 rounded">
+                        Juli 2025
+                      </span>
+                      <span className="text-[10px] font-mono text-[#666]">Event & Logistics</span>
+                    </div>
+                  </div>
+
                 </div>
               </motion.div>
             )}
