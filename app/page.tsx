@@ -254,7 +254,18 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-4">
                 
-                {/* Language 1 */}
+                {/* Language 1: PHP (55%) */}
+                <div>
+                  <div className="flex justify-between text-xs mb-1.5 font-mono">
+                    <span className="text-[#f0f0f0]">PHP</span>
+                    <span className="text-[#888888]">55%</span>
+                  </div>
+                  <div className="w-full bg-[#333] rounded-full h-1.5 overflow-hidden">
+                    <div className="bg-[#ba1ef7] h-1.5 rounded-full" style={{ width: '55%' }}></div>
+                  </div>
+                </div>
+
+                {/* Language 2: TypeScript (25%) */}
                 <div>
                   <div className="flex justify-between text-xs mb-1.5 font-mono">
                     <span className="text-[#f0f0f0]">TypeScript</span>
@@ -265,7 +276,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Language 2 */}
+                {/* Language 3: CSS / Tailwind (15%) */}
                 <div>
                   <div className="flex justify-between text-xs mb-1.5 font-mono">
                     <span className="text-[#f0f0f0]">CSS / Tailwind</span>
@@ -276,7 +287,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Language 3 */}
+                {/* Language 4: JavaScript (5%) */}
                 <div>
                   <div className="flex justify-between text-xs mb-1.5 font-mono">
                     <span className="text-[#f0f0f0]">JavaScript</span>
@@ -284,16 +295,6 @@ export default function Home() {
                   </div>
                   <div className="w-full bg-[#333] rounded-full h-1.5 overflow-hidden">
                     <div className="bg-[#f7df1e] h-1.5 rounded-full" style={{ width: '5%' }}></div>
-                  </div>
-                </div>
-                {/* Language 4 */}
-                <div>
-                  <div className="flex justify-between text-xs mb-1.5 font-mono">
-                    <span className="text-[#f0f0f0]">Php</span>
-                    <span className="text-[#888888]">55%</span>
-                  </div>
-                  <div className="w-full bg-[#333] rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-[#ba1ef7] h-1.5 rounded-full" style={{ width: '55%' }}></div>
                   </div>
                 </div>
 
