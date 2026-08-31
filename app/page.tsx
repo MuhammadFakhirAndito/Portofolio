@@ -212,7 +212,7 @@ export default function Home() {
                 
                 {/* Total Contributions */}
                 <div className="flex flex-col items-center w-1/3">
-                  <span className="text-2xl md:text-3xl font-bold text-[#f0f0f0] mb-1">63</span>
+                  <span className="text-2xl md:text-3xl font-bold text-[#f0f0f0] mb-1">89</span>
                   <span className="text-[10px] md:text-xs text-[#888888] text-center">Total Contributions</span>
                   <span className="text-[8px] md:text-[10px] text-[#555] mt-1 text-center">Nov 24, 2025 - Present</span>
                 </div>
@@ -227,10 +227,10 @@ export default function Home() {
                     <div className="absolute -top-3 md:-top-3.5 bg-[#121212] px-1 text-[#00ffcc]">
                       <FaFire className="text-sm md:text-base drop-shadow-[0_0_5px_rgba(0,255,204,0.8)]" />
                     </div>
-                    <span className="text-xl md:text-2xl font-bold text-[#f0f0f0]">2</span>
+                    <span className="text-xl md:text-2xl font-bold text-[#f0f0f0]">7</span>
                   </div>
                   <span className="text-[10px] md:text-xs font-bold text-[#00ffcc] text-center">Current Streak</span>
-                  <span className="text-[8px] md:text-[10px] text-[#555] mt-1 text-center">Aug 25 - Aug 26</span>
+                  <span className="text-[8px] md:text-[10px] text-[#555] mt-1 text-center">Aug 25 - Aug 31</span>
                 </div>
 
                 {/* Vertical Divider */}
@@ -238,9 +238,9 @@ export default function Home() {
 
                 {/* Longest Streak */}
                 <div className="flex flex-col items-center w-1/3">
-                  <span className="text-2xl md:text-3xl font-bold text-[#f0f0f0] mb-1">4</span>
+                  <span className="text-2xl md:text-3xl font-bold text-[#f0f0f0] mb-1">6</span>
                   <span className="text-[10px] md:text-xs text-[#888888] text-center">Longest Streak</span>
-                  <span className="text-[8px] md:text-[10px] text-[#555] mt-1 text-center">Jun 27 - Jun 30</span>
+                  <span className="text-[8px] md:text-[10px] text-[#555] mt-1 text-center">Aug 25 - Aug 30</span>
                 </div>
 
               </div>
@@ -258,7 +258,7 @@ export default function Home() {
                 <div>
                   <div className="flex justify-between text-xs mb-1.5 font-mono">
                     <span className="text-[#f0f0f0]">TypeScript</span>
-                    <span className="text-[#888888]">60%</span>
+                    <span className="text-[#888888]">25%</span>
                   </div>
                   <div className="w-full bg-[#333] rounded-full h-1.5 overflow-hidden">
                     <div className="bg-[#3178c6] h-1.5 rounded-full" style={{ width: '60%' }}></div>
@@ -269,7 +269,7 @@ export default function Home() {
                 <div>
                   <div className="flex justify-between text-xs mb-1.5 font-mono">
                     <span className="text-[#f0f0f0]">CSS / Tailwind</span>
-                    <span className="text-[#888888]">25%</span>
+                    <span className="text-[#888888]">15%</span>
                   </div>
                   <div className="w-full bg-[#333] rounded-full h-1.5 overflow-hidden">
                     <div className="bg-[#00ffcc] h-1.5 rounded-full" style={{ width: '25%' }}></div>
@@ -280,10 +280,20 @@ export default function Home() {
                 <div>
                   <div className="flex justify-between text-xs mb-1.5 font-mono">
                     <span className="text-[#f0f0f0]">JavaScript</span>
-                    <span className="text-[#888888]">15%</span>
+                    <span className="text-[#888888]">5%</span>
                   </div>
                   <div className="w-full bg-[#333] rounded-full h-1.5 overflow-hidden">
                     <div className="bg-[#f7df1e] h-1.5 rounded-full" style={{ width: '15%' }}></div>
+                  </div>
+                </div>
+                {/* Language 4 */}
+                <div>
+                  <div className="flex justify-between text-xs mb-1.5 font-mono">
+                    <span className="text-[#f0f0f0]">Php</span>
+                    <span className="text-[#888888]">55%</span>
+                  </div>
+                  <div className="w-full bg-[#333] rounded-full h-1.5 overflow-hidden">
+                    <div className="bg-[#ba1ef7] h-1.5 rounded-full" style={{ width: '15%' }}></div>
                   </div>
                 </div>
 
