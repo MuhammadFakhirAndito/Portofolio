@@ -261,7 +261,7 @@ export default function Home() {
                     <span className="text-[#888888]">25%</span>
                   </div>
                   <div className="w-full bg-[#333] rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-[#3178c6] h-1.5 rounded-full" style={{ width: '60%' }}></div>
+                    <div className="bg-[#3178c6] h-1.5 rounded-full" style={{ width: '25%' }}></div>
                   </div>
                 </div>
 
@@ -272,7 +272,7 @@ export default function Home() {
                     <span className="text-[#888888]">15%</span>
                   </div>
                   <div className="w-full bg-[#333] rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-[#00ffcc] h-1.5 rounded-full" style={{ width: '25%' }}></div>
+                    <div className="bg-[#00ffcc] h-1.5 rounded-full" style={{ width: '15%' }}></div>
                   </div>
                 </div>
 
@@ -283,7 +283,7 @@ export default function Home() {
                     <span className="text-[#888888]">5%</span>
                   </div>
                   <div className="w-full bg-[#333] rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-[#f7df1e] h-1.5 rounded-full" style={{ width: '15%' }}></div>
+                    <div className="bg-[#f7df1e] h-1.5 rounded-full" style={{ width: '5%' }}></div>
                   </div>
                 </div>
                 {/* Language 4 */}
@@ -293,7 +293,7 @@ export default function Home() {
                     <span className="text-[#888888]">55%</span>
                   </div>
                   <div className="w-full bg-[#333] rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-[#ba1ef7] h-1.5 rounded-full" style={{ width: '15%' }}></div>
+                    <div className="bg-[#ba1ef7] h-1.5 rounded-full" style={{ width: '55%' }}></div>
                   </div>
                 </div>
 
