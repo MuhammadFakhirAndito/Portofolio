@@ -336,8 +336,6 @@ export default function Home() {
               [ CERTIFICATES ]
             </button>
           </div>
-
-          {/* Konten yang berubah sesuai Tab */}
           <div className="mt-8">
             
             {/* TAMPILAN TAB: PROJECTS */}
@@ -346,7 +344,6 @@ export default function Home() {
               <div className="flex flex-col gap-8">
                 {/* Project 1 */}
                 <div className="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-4 transition-all duration-300">
-                  {/* Partial Image View */}
                   <div className="md:col-span-5 relative h-48 md:h-full w-full overflow-hidden rounded border border-[#222]">
                     <Image 
                       src="/project-1.jpg" 
@@ -458,7 +455,6 @@ export default function Home() {
                 {/* Item 2: Himasisfo UPN Veteran Yogyakarta */}
                 <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-5 transition-all duration-300">
                   <div className="flex gap-4 items-start">
-                    {/* BAGIAN GAMBAR LOGO 2 */}
                     <div className="relative w-12 h-12 shrink-0 rounded overflow-hidden border border-[#333] group-hover:border-[#00ffcc] transition-colors bg-[#1a1a1a]">
                       <Image 
                         src="/Himasisfo.png" 
@@ -589,6 +585,45 @@ export default function Home() {
                         Juli 2025
                       </span>
                       <span className="text-[10px] font-mono text-[#666]">Event & Logistics</span>
+                    </div>
+                  </div>
+                  {/* Certificate 4: PKKBN SI 2026 */}
+                  <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-4 transition-all duration-300">
+                    <div className="relative w-full aspect-[4/3] rounded overflow-hidden border border-[#222] mb-4 bg-[#1a1a1a]">
+                      <Image 
+                        src="/sertifikat-4.jpg" 
+                        alt="Staff Fasilitator PKKBN SI 2026" 
+                        fill 
+                        className="object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <h4 className="text-[#f0f0f0] font-bold group-hover:text-[#00ffcc] transition-colors line-clamp-1">Staff Fasilitator PKKBN SI 2026</h4>
+                    <p className="text-[#888888] text-sm mt-1">HIMASISFO UPN &quot;Veteran&quot; Yogyakarta</p>
+                    <div className="mt-3 pt-3 border-t border-[#222] flex justify-between items-center">
+                      <span className="font-mono text-xs text-[#00ffcc] bg-[#00ffcc]/10 border border-[#00ffcc]/30 px-2 py-0.5 rounded">
+                        Agust 2026
+                      </span>
+                      <span className="text-[10px] font-mono text-[#666]">Organization</span>
+                    </div>
+                  </div>
+
+                  {/* Certificate 5: Gemini Academy */}
+                  <div className="group relative bg-[#121212] border border-[#333] hover:border-[#00ffcc] rounded-lg p-4 transition-all duration-300">
+                    <div className="relative w-full aspect-[4/3] rounded overflow-hidden border border-[#222] mb-4 bg-[#1a1a1a]">
+                      <Image 
+                        src="/sertifikat-5.jpg" 
+                        alt="Gemini Academy Higher Education Training" 
+                        fill 
+                        className="object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <h4 className="text-[#f0f0f0] font-bold group-hover:text-[#00ffcc] transition-colors line-clamp-1">Gemini Academy Training & Certification</h4>
+                    <p className="text-[#888888] text-sm mt-1">Google for Education x Paideia</p>
+                    <div className="mt-3 pt-3 border-t border-[#222] flex justify-between items-center">
+                      <span className="font-mono text-xs text-[#00ffcc] bg-[#00ffcc]/10 border border-[#00ffcc]/30 px-2 py-0.5 rounded">
+                        Sept 2026
+                      </span>
+                      <span className="text-[10px] font-mono text-[#666]">AI & Education</span>
                     </div>
                   </div>
 
